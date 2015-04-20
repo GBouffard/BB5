@@ -5,12 +5,21 @@ class Van
     @bikes = []
   end
 
-  def collect(bike, from)
+  def collect_from_ds(bike, station_name)
     if @bikes.length == @capacity
       fail 'This van is full'
     else
-      @bikes << bike
-      from.bikes.delete(bike)
+      @bikes << bike if bike.working == false
+      station_name.bikes.delete(bike)
+    end
+  end
+
+  def collect_from_garage(bike, garage_name)
+    if @bikes.length == @capacity
+      fail 'This van is full'
+    else
+      @bikes << bike if bike.working == true
+      garage_name.bikes.delete(bike)
     end
   end
 
@@ -23,3 +32,7 @@ class Van
     end
   end
 end
+
+# actually I need to separate release and collect from garage & ds
+# collect from ds only if working == false
+# collect from garage only if working == true
