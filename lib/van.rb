@@ -12,6 +12,6 @@ class Van
 
   def release(bike, to)
     @bikes.delete(bike)
-    to.bikes.push(bike)
+    to.bikes << bike
   end
 end
