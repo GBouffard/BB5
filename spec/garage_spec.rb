@@ -17,10 +17,19 @@ describe Garage do
     expect(garage.bikes).to eq [broken_bike]
   end
 
+  it 'cannot dock more bikes than its capacity' do
+    25.times { garage.dock(broken_bike, van) }
+    expect { garage.dock(broken_bike, van) }.to raise_error 'This garage is full'
+  end
+
   it 'can release a bike' do
     garage.dock(broken_bike, van)
     garage.release(broken_bike, van)
     expect(garage.bikes).to eq []
+  end
+
+  it 'cannot release a bike if there are no bikes left' do
+    expect { garage.release(broken_bike, van) }.to raise_error 'There is no bike to release'
   end
 
   it 'removes a bike from the van when docking a bike to self' do
@@ -29,10 +38,12 @@ describe Garage do
     expect(van.bikes).to eq [working_bike]
   end
 
-  it 'adds a bike to the docking station when releasing from self' do
-    garage.release(working_bike, van)
+  it 'adds a bike to the van station when releasing from self' do
+    third_bike_for_test = double :bike
+    garage.dock(third_bike_for_test, van)
+    garage.release(third_bike_for_test, van)
     allow(van).to receive(:release)
-    expect(van.bikes).to eq [working_bike, broken_bike, working_bike]
+    expect(van.bikes).to eq [working_bike, broken_bike, third_bike_for_test]
   end
 
   it 'can fix a bike once it\'s docked' do

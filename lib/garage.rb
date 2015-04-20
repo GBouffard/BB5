@@ -1,18 +1,26 @@
 class Garage
   attr_reader :capacity, :bikes
-  def initialize
-    @capacity = 25
+  def initialize(cap = 25)
+    @capacity = cap
     @bikes = []
   end
 
   def dock(bike, from_van)
-    @bikes << bike
-    from_van.bikes.delete(bike)
+    if @bikes.length == @capacity
+      fail 'This garage is full'
+    else
+      @bikes << bike
+      from_van.bikes.delete(bike)
+    end
   end
 
   def release(bike, to_van)
-    @bikes.delete(bike)
-    to_van.bikes << bike
+    if @bikes == []
+      fail 'There is no bike to release'
+    else
+      @bikes.delete(bike)
+      to_van.bikes << bike
+    end
   end
 
   def fix_a_bike(bike)

@@ -18,12 +18,12 @@ describe DockingStation do
     expect(ds.bikes).to eq []
   end
 
-  it 'cannot release a bike if there are no bikes left' do
-    expect { ds.release(bike) }.to raise_error 'There is no bike to release'
-  end
-
   it 'cannot dock more bikes than its capacity' do
     30.times { ds.dock(bike) }
     expect { ds.dock(bike) }.to raise_error 'This station is full'
+  end
+
+  it 'cannot release a bike if there are no bikes left' do
+    expect { ds.release(bike) }.to raise_error 'There is no bike to release'
   end
 end
