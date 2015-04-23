@@ -27,7 +27,7 @@ describe Van do
     expect { van.collect_from_ds(broken_bike, ds) }.to raise_error 'This van is full'
   end
 
-  it 'can release a working bike to a docking station' do
+  it 'can release a bike to a docking station (or a garage)' do
     van.collect_from_garage(working_bike, ds)
     van.release(working_bike, ds)
     expect(van.bikes).to eq []
@@ -37,13 +37,13 @@ describe Van do
     expect { van.release(broken_bike, ds) }.to raise_error 'There is no bike to release'
   end
 
-  it 'removes a bike from a docking station while collecting' do
+  it 'removes a bike from a docking station (or a garage) while collecting' do
     van.collect_from_ds(broken_bike, ds)
     allow(ds).to receive(:collect_from_ds)
     expect(ds.bikes).to eq [working_bike]
   end
 
-  it 'adds a bike to a docking station while releasing' do
+  it 'adds a bike to a docking station (or a garage) while releasing' do
     third_bike_for_test = double :bike, working: false
     van.collect_from_ds(third_bike_for_test, ds)
     van.release(third_bike_for_test, ds)

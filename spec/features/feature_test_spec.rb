@@ -20,6 +20,6 @@ feature 'Guillaume\'s own Feature test; a station has 20 bikes' do
     bikeslist[19].break!
     van = Van.new
     bikeslist.each { |bike| van.collect_from_ds(bike, ds) }
-    # expect(van.bikes.length).to eq (4)
+    expect(van.bikes.length).to eq (4)
   end
 end
