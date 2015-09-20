@@ -1,4 +1,5 @@
 require 'bike'
+require 'spec_helper'
 
 describe Bike do
   bike = Bike.new

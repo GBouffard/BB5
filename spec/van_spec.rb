@@ -1,4 +1,5 @@
 require 'van'
+require 'spec_helper'
 
 describe Van do
   let(:van) { Van.new }

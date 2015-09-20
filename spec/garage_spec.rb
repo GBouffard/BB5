@@ -1,4 +1,5 @@
 require 'garage'
+require 'spec_helper'
 
 describe Garage do
   let(:garage) { Garage.new }

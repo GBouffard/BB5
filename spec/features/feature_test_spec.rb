@@ -3,6 +3,7 @@ require 'bike'
 require 'docking_station'
 require 'garage'
 require 'van'
+require 'spec_helper'
 
 feature 'Guillaume\'s own Feature test; a station has 20 bikes' do
   scenario 'they get taken. 4 come back broken. Van collects, garage fixes and van brings back' do

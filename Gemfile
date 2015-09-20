@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rspec'
 gem 'capybara'
-gem 'byebug'
+gem 'coveralls', require: false
+gem 'rake'
+gem 'rspec'
+gem 'rubocop', require: false
