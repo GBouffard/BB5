@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/GBouffard/Boris-bikes.svg)](https://travis-ci.org/GBouffard/Boris-bikes) 
+
 :bike: Boris Bikes :bike:
 ===========
 This is me redoing the Boris Bikes tutorial from Makers Academy without the tutorial; only doing it from the users stories.
