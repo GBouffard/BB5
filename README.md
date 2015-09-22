@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/GBouffard/Boris-bikes.svg)](https://travis-ci.org/GBouffard/Boris-bikes) 
+[![Build Status](https://travis-ci.org/GBouffard/Boris-bikes.svg)](https://travis-ci.org/GBouffard/Boris-bikes) [![Coverage Status](https://coveralls.io/repos/GBouffard/Boris-bikes/badge.svg?branch=master&service=github)](https://coveralls.io/github/GBouffard/Boris-bikes?branch=master) 
 
 :bike: Boris Bikes :bike:
 ===========
