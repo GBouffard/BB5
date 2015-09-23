@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/GBouffard/Boris-bikes.svg)](https://travis-ci.org/GBouffard/Boris-bikes) [![Coverage Status](https://coveralls.io/repos/GBouffard/Boris-bikes/badge.svg?branch=master&service=github)](https://coveralls.io/github/GBouffard/Boris-bikes?branch=master) 
+[![Build Status](https://travis-ci.org/GBouffard/Boris-bikes.svg)](https://travis-ci.org/GBouffard/Boris-bikes) [![Coverage Status](https://coveralls.io/repos/GBouffard/Boris-bikes/badge.svg?branch=master&service=github)](https://coveralls.io/github/GBouffard/Boris-bikes?branch=master) [![Code Climate](https://codeclimate.com/github/GBouffard/Boris-bikes/badges/gpa.svg)](https://codeclimate.com/github/GBouffard/Boris-bikes)
 
 :bike: Boris Bikes :bike:
 ===========
