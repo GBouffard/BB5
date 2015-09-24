@@ -82,53 +82,16 @@ van.release(bike, ds)
 How to run tests
 ----
 ```
-cd Boris-bikes-tutorial
-rspec
+cd Boris-bikes
+rake
 ```
 
-How I wrote the tests and code
-----
-The original tutorial from Makers Academy started with feature tests but I found out that I have a preference for starting with unit tests. Once all my units tests were working, I moved to integrations tests; in the end I created a grand finale feature test to make sure that it was all working: a station has 20 bikes. They get taken. 4 come back broken. The van collects, the garage fixes and the van brings back to the docking station. The tests proved that they all work. That final test actually helped me to rectify a few tiny mistakes that were passing at units level. These are all the tests:
-```
-Bike
-  is working when created
-  can break
-  can be fixed if broken
-  cannot be fixed if working
+This is what you should see
 
-DockingStation
-  has a capacity when created
-  can dock a bike
-  can release a bike
-  cannot dock more bikes than its capacity
-  cannot release a bike if there are no bikes left
-
-Guillaume's own Feature test; a station has 20 bikes
-  they get taken. 4 come back broken. Van collects, garage fixes and van brings back
-
-Garage
-  has a capacity
-  can dock a bike
-  cannot dock more bikes than its capacity
-  can release a bike
-  cannot release a bike if there are no bikes left
-  removes a bike from the van when docking a bike to self
-  adds a bike to the van station when releasing from self
-  can fix a bike once it's docked
-
-Van
-  has a capacity
-  can only collect a broken bike from a docking station
-  can only collect a working bike from a garage
-  cannot collect more bikes than its capacity
-  can release a bike to a docking station (or a garage)
-  cannot release a bike if there are no bikes left
-  removes a bike from a docking station (or a garage) while collecting
-  adds a bike to a docking station (or a garage) while releasing
-```
+![](public/rspec_screenshot.png)
 
 Room for improvement:
 ----
 
-- The van, garage and docking station have some similar behaviors and as a result, a module can be used to group these behaviours. It's in my to-do list.
+- The van, garage and docking station have some similar behaviors and as a result, a module can be used to group these behaviours. It's in my things to do.
 - I could also remove my comments but still as a learner, I found them useful; I review them from time to time to make sure I will not make these mistakes again.
